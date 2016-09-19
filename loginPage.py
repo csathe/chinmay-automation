@@ -11,43 +11,43 @@ class LP:
 
             # wait checks until elements have been located
             fn = WebDriverWait(browser, values_store_room.timeoutinSeconds).until(
-                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.first_name_box)))
+                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.dict_userinfo_boxes['first_name_box'])))
             ln = WebDriverWait(browser, values_store_room.timeoutinSeconds).until(
-                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.last_name_box)))
+                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.dict_userinfo_boxes['last_name_box'])))
 
             mobile_number = WebDriverWait(browser, values_store_room.timeoutinSeconds).until(
-                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.mobile_number_box)))
+                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.dict_userinfo_boxes['mobile_number_box'])))
             mobile_number_again = WebDriverWait(browser, values_store_room.timeoutinSeconds).until(
-                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.reenter_mobile_number_box)))
+                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.dict_userinfo_boxes['reenter_mobile_number_box'])))
 
             new_password = WebDriverWait(browser, values_store_room.timeoutinSeconds).until(
-                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.new_pwd)))
+                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.dict_userinfo_boxes['new_pwd'])))
 
             birthday_month = WebDriverWait(browser, values_store_room.timeoutinSeconds).until(
-                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.bday_month)))
+                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.dict_userinfo_boxes['bday_month'])))
 
             birthday_day = WebDriverWait(browser, values_store_room.timeoutinSeconds).until(
-                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.bday_day)))
+                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.dict_userinfo_boxes['bday_day'])))
 
             birthday_year = WebDriverWait(browser, values_store_room.timeoutinSeconds).until(
-                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.bday_year)))
+                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.dict_userinfo_boxes['bday_year'])))
 
             m = WebDriverWait(browser, values_store_room.timeoutinSeconds).until(
-                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.male)))
+                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.dict_userinfo_boxes['male'])))
             fm = WebDriverWait(browser, values_store_room.timeoutinSeconds).until(
-                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.female)))
+                EC.presence_of_element_located((selectors_store_room.id, elements_store_room.dict_userinfo_boxes['female'])))
 
             # enter text in boxes, select dropdown options etc.
-            fn.send_keys(values_store_room.fn_text)
-            ln.send_keys(values_store_room.ln_text)
-            mobile_number.send_keys(values_store_room.m_num)
-            mobile_number_again.send_keys(values_store_room.m_num)
-            new_password.send_keys(values_store_room.np)
+            fn.send_keys(values_store_room.dict_userinfo['fn_text'])
+            ln.send_keys(values_store_room.dict_userinfo['ln_text'])
+            mobile_number.send_keys(values_store_room.dict_userinfo['m_num'])
+            mobile_number_again.send_keys(values_store_room.dict_userinfo['m_num'])
+            new_password.send_keys(values_store_room.dict_userinfo['np'])
 
 
-            Select( (birthday_month) ).select_by_visible_text(values_store_room.mon)
-            Select((birthday_day)).select_by_visible_text(values_store_room.day)
-            Select((birthday_year)).select_by_visible_text(values_store_room.year)
+            Select( (birthday_month) ).select_by_visible_text(values_store_room.dict_userinfo['mon'])
+            Select((birthday_day)).select_by_visible_text(values_store_room.dict_userinfo['day'])
+            Select((birthday_year)).select_by_visible_text(values_store_room.dict_userinfo['year'])
 
             m.click()
             fm.click()
